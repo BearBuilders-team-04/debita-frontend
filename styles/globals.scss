@@ -1,0 +1,31 @@
+$theme-colors: (
+  "primary": #6CC1FA
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  --background-color: #1E1A20;
+  --primary-color: #6CC1FA;
+  --text-color: #36323C;
+  --secondary-color: #FFFFFF;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
