@@ -39,7 +39,7 @@ const Footer: NextPage = () => {
           </a>
           <div>
             {socials.map((object, i) =>
-              <a href={object.href}>
+              <a href={object.href} key={i}>
                 <Image src={object.src} key={i} />
               </a>)}
           </div>
