@@ -1,16 +1,53 @@
 import type { NextPage } from "next";
 import React from "react";
 import Footer from "../components/Footer";
+import Image from "next/image";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.scss";
 import { FaArrowDown } from 'react-icons/fa';
+
+const data = [
+  {
+    colateral: "usdc",
+    borrow: "usdc",
+    ratio: "DAI",
+    term_rate: "5.00%",
+    apr: "1000",
+    total_term: "1000",
+    installments: "Active",
+  },
+  {
+    colateral: "usdc",
+    borrow: "usdc",
+    ratio: "DAI",
+    term_rate: "5.00%",
+    apr: "1000",
+    total_term: "1000",
+    installments: "Active",
+  },
+]
+
+const coinLogos = {
+  usdc: require("../assets/images/coins/usdc.png"),
+  metis: require("../assets/images/coins/metis.png"),
+}
 
 const ObjectRow = ({ data }) => {
   const { colateral, borrow, ratio, term_rate, apr, total_term, installments } = data
   return (
     <tr>
-      <td>{colateral}</td>
-      <td>{borrow}</td>
+      <td>
+        <Image
+          className={styles.coinLogo}
+          src={coinLogos[borrow.toLowerCase()]}
+        />
+        {colateral.toUpperCase()}</td>
+      <td>
+        <Image
+          className={styles.coinLogo}
+          src={coinLogos[borrow.toLowerCase()]}
+        />
+        {borrow.toUpperCase()}</td>
       <td>{ratio}</td>
       <td>{term_rate}</td>
       <td>{apr}</td>
@@ -22,27 +59,6 @@ const ObjectRow = ({ data }) => {
 }
 
 const Borrow: NextPage = () => {
-  const data = [
-    {
-      colateral: 1,
-      borrow: "Dai",
-      ratio: "DAI",
-      term_rate: "5.00%",
-      apr: "1000",
-      total_term: "1000",
-      installments: "Active",
-    },
-    {
-      colateral: 1,
-      borrow: "Dai",
-      ratio: "DAI",
-      term_rate: "5.00%",
-      apr: "1000",
-      total_term: "1000",
-      installments: "Active",
-    },
-  ]
-
   return (
     <div className={styles.container}>
       <Header />

@@ -47,7 +47,7 @@ const Header: NextPage = () => {
             <h3 className={`${styles.navItemText} ${router.pathname == "/lending" ? styles.active : undefined} ${styles.pointer}`}>Lending</h3>
           </Link>
 
-          <Link href="https://tofunft.com/metis">
+          <Link href="/marketplace">
             <h3 className={`${styles.navItemText} ${router.pathname == "/marketplace" ? styles.active : undefined} ${styles.pointer}`}>Marketplace</h3>
           </Link>
           <ConnectButton />
