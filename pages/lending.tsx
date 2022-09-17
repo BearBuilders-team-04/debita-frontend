@@ -32,7 +32,7 @@ const Lending: NextPage = () => {
     isLoading: ercIsLoading,
     isSuccess: ercIsSuccess,
     write: ercWrite,
-  } = useContractWrite(config);
+  } = useContractWrite(ercConfig);
 
   return (
     <div className={styles.container}>
