@@ -4,6 +4,7 @@ import { erc20ABI, useContractWrite, usePrepareContractWrite } from "wagmi";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.scss";
+import debitaABI from "../assets/debitaABI.json";
 
 const Lending: NextPage = () => {
   const [isCreating, setIsCreating] = useState(false);
@@ -16,8 +17,15 @@ const Lending: NextPage = () => {
     onError: (e) => console.log(e),
   }).config;
 
-  const { ercData, ercIsLoading, ercIsSuccess, ercWrite } =
-    useContractWrite(ercConfig);
+  const { config } = usePrepareContractWrite({
+    addressOrName: "0x1b588790B7b13B1B7f80c7c7423927744Da99604",
+    contractInterface: debitaABI,
+    functionName: "createLendingOption",
+    args: [],
+    onError: (e) => console.log(e),
+  });
+
+  const { data, isLoading, isSuccess, write } = useContractWrite(config);
 
   return (
     <div className={styles.container}>
