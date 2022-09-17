@@ -38,6 +38,7 @@ $theme-colors: (
   --primary-color: #6cc1fa;
   --text-color: #ffffff;
   --secondary-color: #36323c;
+  --main-gradient: linear-gradient(90.03deg, #d45072 0.03%, #a071fa 100.4%);
 }
 
 html,
@@ -47,6 +48,8 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   font-family: "InterUI-Regular", sans-serif;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {

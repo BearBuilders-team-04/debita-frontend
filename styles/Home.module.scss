@@ -19,11 +19,10 @@
     line-height: 30px;
     font-size: 1.5rem;
     font-style: normal;
-    background: linear-gradient(90.03deg, #d45072 0.03%, #a071fa 100.4%);
+    background: var(--main-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
   }
 
   .navItemsContainer {
@@ -31,6 +30,28 @@
     justify-content: space-between;
     align-items: center;
     width: 50%;
+
+    div {
+      background: transparent !important;
+    }
+
+    button {
+      * {
+        color: var(--text-color) !important;
+        border: none !important;
+      }
+
+      background: var(--main-gradient) !important;
+    }
+
+    .active {
+      background: var(--main-gradient),
+        var(--main-gradient) bottom 2px left 0/100% 2px no-repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text, padding-box;
+      -webkit-background-clip: text, padding-box;
+    }
   }
 
   .navItemText {
@@ -39,6 +60,11 @@
     font-weight: 700;
     line-height: 30px;
     color: var(--text-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 }
 
