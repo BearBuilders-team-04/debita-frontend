@@ -1,21 +1,23 @@
 import type { NextPage } from "next";
 import React, { useState } from "react";
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
-import debitaABI from "../assets/debitaABI.js";
+import { erc20ABI, useContractWrite, usePrepareContractWrite } from "wagmi";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.scss";
 
 const Lending: NextPage = () => {
   const [isCreating, setIsCreating] = useState(false);
-  const { config } = usePrepareContractWrite({
-    addressOrName: "0x1b588790B7b13B1B7f80c7c7423927744Da99604",
-    contractInterface: debitaABI,
-    functionName: "createLendingOption",
-    args: [],
+
+  const ercConfig = usePrepareContractWrite({
+    addressOrName: "0x76f179e0a82B7E4164e6B0E3abBA085dF7FAB97C",
+    contractInterface: erc20ABI,
+    functionName: "approve",
+    args: ["0x1b588790B7b13B1B7f80c7c7423927744Da99604", 100],
     onError: (e) => console.log(e),
-  });
-  const { data, isLoading, isSuccess, write } = useContractWrite(config);
+  }).config;
+
+  const { ercData, ercIsLoading, ercIsSuccess, ercWrite } =
+    useContractWrite(ercConfig);
 
   return (
     <div className={styles.container}>
@@ -103,15 +105,24 @@ const Lending: NextPage = () => {
           <button
             className={styles.button}
             onClick={() => {
+              console.log("approving token");
+              ercWrite?.();
+            }}
+          >
+            Approve token
+          </button>
+
+          <button
+            className={styles.button}
+            onClick={() => {
               console.log("creating new loan");
-              setIsCreating(true);
-              write?.();
+              // write?.();
             }}
           >
             Create new Loan
           </button>
-          {isLoading && <div>Check Wallet</div>}
-          {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
+          {/* {isLoading && <div>Check Wallet</div>}
+          {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>} */}
         </div>
       )}
 
