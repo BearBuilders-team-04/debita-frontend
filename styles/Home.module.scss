@@ -271,6 +271,79 @@
   background-size: cover;
   color: #ffffff;
   font-size: 1.25rem;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.createContainer {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  align-self: center;
+}
+
+.createFieldsGroup {
+  display: flex;
+  flex-direction: column;
+  background-color: #1D1E22;
+  width: 1000px;
+  align-self: center;
+  border-radius: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.inputsGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.textInput{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.inputGroup{
+  display: flex;
+  flex-direction: row;
+}
+
+.input{
+  background: none;
+  border-width: 1px;
+  border-color: #ffffff;
+  border-radius: 15px;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 5px;
+  padding-left: 10px;
+  color: #ffffff;
+  height:40px;
+}
+
+.input2{
+  background: none;
+  border-width: 1px;
+  border-color: #ffffff;
+  border-radius: 15px;
+  width: 800px;
+  margin-top: 10px;
+  margin-left: 5px;
+  padding-left: 10px;
+  color: #ffffff;
+  height:40px;
+
+}
+
+.bottomText {
+  margin-left: 130px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {

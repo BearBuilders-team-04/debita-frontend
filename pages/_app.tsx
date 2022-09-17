@@ -3,39 +3,40 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import React from "react";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import "../styles/globals.scss";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
-    {
-      id: 1088,
-      /** Human-readable name */
-      name: "Metis",
-      /** Internal network name */
-      network: "Metis",
-      /** Currency used by chain */
-      nativeCurrency: {
-        name: "METIS",
-        symbol: "METIS",
-        decimals: 18,
-      },
-      /** Collection of RPC endpoints */
-      rpcUrls: {
-        default: "https://andromeda.metis.io/?owner=1088",
-      },
-      /** Collection of block explorers */
-      blockExplorers: {
-        default: {
-          name: "Metis",
-          url: "https://andromeda.metis.io/?owner=1088",
-        },
-      },
-      /** Flag for test networks */
-      testnet: true,
-    },
+    // {
+    //   id: 1088,
+    //   /** Human-readable name */
+    //   name: "Metis",
+    //   /** Internal network name */
+    //   network: "Metis",
+    //   /** Currency used by chain */
+    //   nativeCurrency: {
+    //     name: "METIS",
+    //     symbol: "METIS",
+    //     decimals: 18,
+    //   },
+    //   /** Collection of RPC endpoints */
+    //   rpcUrls: {
+    //     default: "https://andromeda.metis.io/?owner=1088",
+    //   },
+    //   /** Collection of block explorers */
+    //   blockExplorers: {
+    //     default: {
+    //       name: "Metis",
+    //       url: "https://andromeda.metis.io/?owner=1088",
+    //     },
+    //   },
+    //   /** Flag for test networks */
+    //   testnet: true,
+    // },`
+    chain.goerli,
   ],
   [
     alchemyProvider({
