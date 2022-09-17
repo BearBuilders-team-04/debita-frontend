@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const debitaLogo = require("../assets/images/debita-logo.png");
 const socials = [
-  { src: require("../assets/images/socials/discord.png"), href: "" },
-  { src: require("../assets/images/socials/twitter.png"), href: "" },
-  { src: require("../assets/images/socials/gitbook.png"), href: "" },
-  { src: require("../assets/images/socials/github.png"), href: "" },
+  { src: require("../assets/images/socials/discord.png"), href: "https://discord.gg/aEPMr47vXh" },
+  { src: require("../assets/images/socials/twitter.png"), href: "https://twitter.com/DebitaFinance" },
+  { src: require("../assets/images/socials/gitbook.png"), href: "https://github.com/Esteban-V/debita-frontend" },
+  { src: require("../assets/images/socials/github.png"), href: "https://app.gitbook.com/o/ejVJjiw8Hs0iPoLsVOWw/s/SJiMe4bObr8imYiy9BJy/" },
   { src: require("../assets/images/socials/medium.png"), href: "" },
 ]
 
@@ -39,7 +39,7 @@ const Footer: NextPage = () => {
           </a>
           <div>
             {socials.map((object, i) =>
-              <a href={object.href} key={i}>
+              <a href={object.href} target="blank" key={i}>
                 <Image src={object.src} key={i} />
               </a>)}
           </div>

@@ -100,7 +100,6 @@
   box-shadow: 0 0 0 2px var(--secondary-color);
   border-collapse: collapse;
 
-
   .borrowButton {
     background: var(--main-gradient) !important;
     -webkit-background-clip: text;
@@ -195,6 +194,14 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+  }
+
+  .landingSocials {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-block: 1rem;
   }
 }
 
