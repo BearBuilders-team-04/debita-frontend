@@ -1,21 +1,21 @@
 import type { NextPage } from "next";
 import React, { useState } from "react";
 import { erc20ABI, useContractWrite, usePrepareContractWrite } from "wagmi";
+import debitaABI from "../assets/debitaABI.json";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.scss";
-import debitaABI from "../assets/debitaABI.json";
 
 const Lending: NextPage = () => {
   const [isCreating, setIsCreating] = useState(false);
 
-  const ercConfig = usePrepareContractWrite({
+  const { config: ercConfig } = usePrepareContractWrite({
     addressOrName: "0x76f179e0a82B7E4164e6B0E3abBA085dF7FAB97C",
     contractInterface: erc20ABI,
     functionName: "approve",
     args: ["0x1b588790B7b13B1B7f80c7c7423927744Da99604", 100],
     onError: (e) => console.log(e),
-  }).config;
+  });
 
   const { config } = usePrepareContractWrite({
     addressOrName: "0x1b588790B7b13B1B7f80c7c7423927744Da99604",
@@ -26,6 +26,13 @@ const Lending: NextPage = () => {
   });
 
   const { data, isLoading, isSuccess, write } = useContractWrite(config);
+
+  const {
+    data: ercData,
+    isLoading: ercIsLoading,
+    isSuccess: ercIsSuccess,
+    write: ercWrite,
+  } = useContractWrite(config);
 
   return (
     <div className={styles.container}>
@@ -124,13 +131,13 @@ const Lending: NextPage = () => {
             className={styles.button}
             onClick={() => {
               console.log("creating new loan");
-              // write?.();
+              write?.();
             }}
           >
             Create new Loan
           </button>
-          {/* {isLoading && <div>Check Wallet</div>}
-          {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>} */}
+          {isLoading && <div>Check Wallet</div>}
+          {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
         </div>
       )}
 
