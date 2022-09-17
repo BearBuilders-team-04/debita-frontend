@@ -1,15 +1,43 @@
 $theme-colors: (
-  "primary": #6CC1FA
+  "primary": #6cc1fa,
 );
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: "InterUI";
+  src: url("../assets/InterUI/Inter-UI-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterUI";
+  src: url("../assets/InterUI/Inter-UI-SemiBold.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterUI";
+  src: url("../assets/InterUI/Inter-UI-Bold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterUI";
+  src: url("../assets/InterUI/Inter-UI-ExtraBold.otf");
+  font-weight: 800;
+  font-style: normal;
+}
+
 :root {
-  --background-color: #1E1A20;
-  --primary-color: #6CC1FA;
-  --text-color: #36323C;
-  --secondary-color: #FFFFFF;
+  --background-color: #1e1a20;
+  --primary-color: #6cc1fa;
+  --text-color: #ffffff;
+  --secondary-color: #36323c;
 }
 
 html,
@@ -18,7 +46,7 @@ body {
   margin: 0;
   color: var(--text-color);
   background-color: var(--background-color);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: "InterUI-Regular", sans-serif;
 }
 
 a {

@@ -8,11 +8,37 @@
   align-items: center;
   padding: 1rem 0;
 
+  .titleContainer {
+    display: flex;
+    align-items: center;
+  }
+
   .title {
-    color: var(--secondary-color);
     margin: 0;
-    line-height: 1.15;
-    font-size: 2rem;
+    margin-left: 10px;
+    line-height: 30px;
+    font-size: 1.5rem;
+    font-style: normal;
+    background: linear-gradient(90.03deg, #d45072 0.03%, #a071fa 100.4%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .navItemsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  }
+
+  .navItemText {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--text-color);
   }
 }
 
@@ -52,7 +78,7 @@
     line-height: 1.15;
     font-size: 1.5rem;
     color: var(--text-color);
-  }	
+  }
 
   .cardContent {
     margin: 0;
