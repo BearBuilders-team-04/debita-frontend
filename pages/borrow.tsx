@@ -15,22 +15,31 @@ import styles from "../styles/Home.module.scss";
 
 const borrowsData = [
   {
-    colateral: "usdc",
+    colateral: "metis",
     borrow: "usdc",
-    ratio: "DAI",
-    term_rate: "5.00%",
-    apr: "1000",
-    total_term: "1000",
-    installments: "Active",
+    ratio: "72%",
+    term_rate: "8.00%",
+    apr: "110%",
+    total_term: "10 days",
+    installments: "10",
   },
   {
-    colateral: "usdc",
+    colateral: "metis",
     borrow: "usdc",
-    ratio: "DAI",
+    ratio: "75%",
+    term_rate: "15.00%",
+    apr: "115%",
+    total_term: "30 days",
+    installments: "30",
+  },
+  {
+    colateral: "metis",
+    borrow: "usdc",
+    ratio: "70%",
     term_rate: "5.00%",
-    apr: "1000",
-    total_term: "1000",
-    installments: "Active",
+    apr: "119%",
+    total_term: "2 days",
+    installments: "2",
   },
 ];
 
@@ -49,7 +58,7 @@ const ObjectRow = ({ data }) => {
       <td>
         <Image
           className={styles.coinLogo}
-          src={coinLogos[borrow.toLowerCase()]}
+          src={coinLogos[colateral.toLowerCase()]}
           alt={"coin"}
         />
         {colateral.toUpperCase()}

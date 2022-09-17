@@ -1,13 +1,8 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import {
-  erc20ABI,
-  useContractRead,
-  useContractWrite,
-  usePrepareContractWrite,
-} from "wagmi";
+import { erc20ABI, useContractWrite, usePrepareContractWrite } from "wagmi";
 import debitaABI from "../assets/debitaABI.json";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -16,21 +11,30 @@ import styles from "../styles/Home.module.scss";
 const loansData = [
   {
     colateral: "usdc",
-    borrow: "usdc",
-    ratio: "DAI",
-    term_rate: "5.00%",
-    apr: "1000",
-    total_term: "1000",
-    installments: "Active",
+    borrow: "metis",
+    ratio: "72%",
+    term_rate: "8.00%",
+    apr: "110%",
+    total_term: "10 days",
+    installments: "10",
   },
   {
     colateral: "usdc",
-    borrow: "usdc",
-    ratio: "DAI",
+    borrow: "metis",
+    ratio: "75%",
+    term_rate: "15.00%",
+    apr: "115%",
+    total_term: "30 days",
+    installments: "30",
+  },
+  {
+    colateral: "usdc",
+    borrow: "metis",
+    ratio: "70%",
     term_rate: "5.00%",
-    apr: "1000",
-    total_term: "1000",
-    installments: "Active",
+    apr: "119%",
+    total_term: "2 days",
+    installments: "2",
   },
 ];
 
@@ -57,7 +61,7 @@ const ObjectRow = ({ data }) => {
       <td>
         <Image
           className={styles.coinLogo}
-          src={coinLogos[borrow.toLowerCase()]}
+          src={coinLogos[colateral.toLowerCase()]}
           alt={"coin"}
         />
         {borrow.toUpperCase()}
@@ -78,10 +82,10 @@ const Lending: NextPage = () => {
   const [isCreating, setIsCreating] = useState(false);
 
   const { config: ercConfig } = usePrepareContractWrite({
-    addressOrName: "0x259E43D4Ce0609E956aC23dc0a19acB0EC4c411F",
+    addressOrName: "0x2C26871B79E69DCfBcA6e713AE058397fE3aD66b",
     contractInterface: erc20ABI,
     functionName: "approve",
-    args: ["0x08af2e49c331612cE729a324e1D33Fd320E60DE0", 100],
+    args: ["0x08af2e49c331612cE729a324e1D33Fd320E60DE0", 1000000000000],
     onError: (e) => console.log(e),
   });
 
@@ -94,8 +98,8 @@ const Lending: NextPage = () => {
       1000, // timelap,
       6, // paymentCount
       "1000", // wanted collateral
-      100, // amount borrow
-      "0x259E43D4Ce0609E956aC23dc0a19acB0EC4c411F", // address token
+      10000000000, // amount borrow
+      "0x2C26871B79E69DCfBcA6e713AE058397fE3aD66b", // address token
     ],
     mode: "recklesslyUnprepared",
     onError: (e) => console.log(e),
@@ -108,20 +112,20 @@ const Lending: NextPage = () => {
     write: ercWrite,
   } = useContractWrite(ercConfig);
 
-  const {
-    data: loansData,
-    isError: loanIsError,
-    isLoading: loanIsLoading,
-  } = useContractRead({
-    addressOrName: "0x1b588790B7b13B1B7f80c7c7423927744Da99604",
-    contractInterface: debitaABI,
-    functionName: "allLendingOffers",
-    onError: (e) => console.log(e),
-  });
+  // const {
+  //   data: loansData,
+  //   isError: loanIsError,
+  //   isLoading: loanIsLoading,
+  // } = useContractRead({
+  //   addressOrName: "0x1b588790B7b13B1B7f80c7c7423927744Da99604",
+  //   contractInterface: debitaABI,
+  //   functionName: "allLendingOffers",
+  //   onError: (e) => console.log(e),
+  // });
 
-  useEffect(() => {
-    console.log(loansData);
-  }, [loansData]);
+  // useEffect(() => {
+  //   console.log(loansData);
+  // }, [loansData]);
 
   return (
     <div className={styles.container}>
@@ -140,8 +144,8 @@ const Lending: NextPage = () => {
           <table className={styles.borrowTable}>
             <thead className={styles.borrowGradient}>
               <tr>
+                <th>Lend</th>
                 <th>Colateral</th>
-                <th>Borrow</th>
                 <th>Ratio</th>
                 <th>Term Rate</th>
                 <th>APR</th>
