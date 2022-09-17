@@ -1,34 +1,32 @@
-import axios from "axios";
-import { ConnectButton, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles/Home.module.scss";
 
 const debitaLogo = require("../assets/images/debita-logo.png");
 
 const Header: NextPage = () => {
   const router = useRouter();
-  console.log(router.pathname)
+  console.log(router.pathname);
 
   return (
     <>
       <Head>
         <title>Dēbita</title>
-        <link rel='icon' href="/static/favicon.ico" />
+        <link rel="icon" href="/static/favicon.ico" />
       </Head>
 
       <div className={styles.header}>
-
         <Link href="/">
           <div className={`${styles.titleContainer} ${styles.pointer}`}>
             <Image
               src={debitaLogo}
-              alt='logo'
+              alt="logo"
               className={styles.image}
               width={"33.75px"}
               height={"26.25px"}
@@ -40,15 +38,33 @@ const Header: NextPage = () => {
 
         <div className={styles.navItemsContainer}>
           <Link href="/borrow">
-            <h3 className={`${styles.navItemText} ${router.pathname == "/borrow" ? styles.active : undefined} ${styles.pointer}`}>Borrow</h3>
+            <h3
+              className={`${styles.navItemText} ${
+                router.pathname == "/borrow" ? styles.active : undefined
+              } ${styles.pointer}`}
+            >
+              Borrow
+            </h3>
           </Link>
 
           <Link href="/lending">
-            <h3 className={`${styles.navItemText} ${router.pathname == "/lending" ? styles.active : undefined} ${styles.pointer}`}>Lending</h3>
+            <h3
+              className={`${styles.navItemText} ${
+                router.pathname == "/lending" ? styles.active : undefined
+              } ${styles.pointer}`}
+            >
+              Lending
+            </h3>
           </Link>
 
-          <Link href="/marketplace">
-            <h3 className={`${styles.navItemText} ${router.pathname == "/marketplace" ? styles.active : undefined} ${styles.pointer}`}>Marketplace</h3>
+          <Link href="https://testnets.opensea.io/es/collection/nft-test-1qolkxkxpa">
+            <h3
+              className={`${styles.navItemText} ${
+                router.pathname == "/marketplace" ? styles.active : undefined
+              } ${styles.pointer}`}
+            >
+              Marketplace
+            </h3>
           </Link>
 
           <Link href="/dashboard">

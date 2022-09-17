@@ -117,6 +117,10 @@
     background-clip: text;
     border: none !important;
     color: var(--text-color);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 
   tbody {
@@ -248,6 +252,15 @@
     font-size: 1.5rem;
     color: var(--text-color);
   }
+}
+
+.coinLogo{
+  object-fit: contain;
+}
+
+.coinLogo2{
+  object-fit: contain;
+  margin-left: 10px;
 }
 
 .footer {
@@ -409,6 +422,13 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
+}
+
+.tokenGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
 .inputGroup {
