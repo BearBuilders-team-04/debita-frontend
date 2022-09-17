@@ -197,6 +197,17 @@
   line-height: 1.5;
 }
 
+.button {
+  width: 849px;
+  height: 75px;
+  border-radius: 20px;
+  background-image: url('../assets/images/borrow-gradient.png');
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
