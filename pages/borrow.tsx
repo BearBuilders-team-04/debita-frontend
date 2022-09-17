@@ -39,7 +39,7 @@ const ObjectRow = ({ data }) => {
       <td>
         <Image
           className={styles.coinLogo}
-          src={coinLogos[borrow.toLowerCase()]}
+          src={coinLogos[borrow.toLowerCase()] || coinLogos["metis"]}
         />
         {colateral.toUpperCase()}</td>
       <td>

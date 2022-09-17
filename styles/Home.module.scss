@@ -77,6 +77,13 @@
   background-size: cover;
 }
 
+.lendingGradient {
+  background: linear-gradient(90deg, #6259C9 2.63%, #17BCC9 100%) !important;
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+}
+
 .borrowHeader {
   display: flex;
   align-items: center;
@@ -94,6 +101,8 @@
 }
 
 .borrowTable {
+  margin-bottom: 20px;
+  width: 100%;
   background-color: var(--secondary-dark);
   border-radius: 20px;
   border-style: hidden;
