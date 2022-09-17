@@ -19,7 +19,7 @@ const Lending: NextPage = () => {
     <div className={styles.container}>
       <Header />
 
-      <div className={styles.main}>
+      <div className={`${styles.main} ${styles.paddingTop}`}>
         <button
           className={styles.button}
           onClick={() => {
@@ -32,7 +32,6 @@ const Lending: NextPage = () => {
         {isLoading && <div>Check Wallet</div>}
         {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
       </div>
-
       <Footer />
     </div>
   );

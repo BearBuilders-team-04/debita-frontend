@@ -9,7 +9,7 @@ const Marketplace: NextPage = () => {
     <div className={styles.container}>
         <Header />
 
-        <div className={styles.main}>
+        <div className={`${styles.main} ${styles.paddingTop}`}>
         </div>
 
         <Footer />

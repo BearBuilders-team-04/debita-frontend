@@ -7,10 +7,9 @@ import Link from "next/link";
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import TabComponent from "../components/TabComponent";
 import styles from "../styles/Home.module.scss";
 
-const debitaLogo = require("../assets/images/debita-logo.png");
+const debitaLogo = require("../assets/images/debita-logo-full.png");
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +17,12 @@ const Home: NextPage = () => {
       <Header />
 
       <div className={styles.main}>
+        <div className={styles.landingHeader}>
+          <div>
+            <h1 className={styles.landingTitle}>Dēbita.</h1>
+          </div>
+        </div>
+
       </div>
 
       <Footer />
