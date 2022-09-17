@@ -10,22 +10,28 @@ const Lending: NextPage = () => {
   const [isCreating, setIsCreating] = useState(false);
 
   const { config: ercConfig } = usePrepareContractWrite({
-    addressOrName: "0x76f179e0a82B7E4164e6B0E3abBA085dF7FAB97C",
+    addressOrName: "0x259E43D4Ce0609E956aC23dc0a19acB0EC4c411F",
     contractInterface: erc20ABI,
     functionName: "approve",
     args: ["0x1b588790B7b13B1B7f80c7c7423927744Da99604", 100],
     onError: (e) => console.log(e),
   });
 
-  const { config } = usePrepareContractWrite({
+  const { data, isLoading, isSuccess, write } = useContractWrite({
     addressOrName: "0x1b588790B7b13B1B7f80c7c7423927744Da99604",
     contractInterface: debitaABI,
     functionName: "createLendingOption",
-    args: [],
+    args: [
+      2, // interest
+      1000, // timelap,
+      6, // paymentCount
+      "1000", // wanted collateral
+      100, // amount borrow
+      "0x259E43D4Ce0609E956aC23dc0a19acB0EC4c411F", // address token
+    ],
+    mode: "recklesslyUnprepared",
     onError: (e) => console.log(e),
   });
-
-  const { data, isLoading, isSuccess, write } = useContractWrite(config);
 
   const {
     data: ercData,
