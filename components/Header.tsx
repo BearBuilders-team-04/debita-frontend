@@ -50,6 +50,10 @@ const Header: NextPage = () => {
           <Link href="/marketplace">
             <h3 className={`${styles.navItemText} ${router.pathname == "/marketplace" ? styles.active : undefined} ${styles.pointer}`}>Marketplace</h3>
           </Link>
+
+          <Link href="/dashboard">
+            <h3 className={`${styles.navItemText} ${router.pathname == "/dashboard" ? styles.active : undefined} ${styles.pointer}`}>Dashboard</h3>
+          </Link>
           <ConnectButton />
         </div>
       </div>
