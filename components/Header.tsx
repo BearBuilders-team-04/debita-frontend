@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import axios from "axios";
-=======
 import { ConnectButton, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
->>>>>>> Stashed changes
 import type { NextPage } from "next";
-import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
