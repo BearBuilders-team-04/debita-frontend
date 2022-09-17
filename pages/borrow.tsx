@@ -3,6 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.scss";
+import { FaArrowDown } from 'react-icons/fa';
 
 const ObjectRow = ({ data }) => {
   const { colateral, borrow, ratio, term_rate, apr, total_term, installments } = data
@@ -48,9 +49,16 @@ const Borrow: NextPage = () => {
 
       <div className={`${styles.main} ${styles.paddingTop}`}>
 
+        <div className={`${styles.borrowGradient} ${styles.borrowHeader}`}>
+          <h1>Borrow</h1>
+          <div>
+            <h1>Filter  <FaArrowDown /></h1>
+          </div>
+        </div>
+
         <table
           className={styles.borrowTable}>
-          <thead>
+          <thead className={styles.borrowGradient}>
             <tr>
               <th>Colateral</th>
               <th>Borrow</th>

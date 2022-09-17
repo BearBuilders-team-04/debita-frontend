@@ -71,6 +71,28 @@
   }
 }
 
+.borrowGradient {
+  background-image: url('../assets/images/borrow-gradient.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.borrowHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  margin-bottom: 20px;
+
+  h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
 .borrowTable {
   background-color: var(--secondary-dark);
   border-radius: 20px;
@@ -104,10 +126,6 @@
     text-align: center;
     color: var(--text-color);
 
-  }
-
-  thead {
-    background: var(--main-gradient) !important;
   }
 
   th {
@@ -218,11 +236,43 @@
 .footer {
   display: flex;
   flex: 1;
-  color: var(--secondary-color);
+  color: var(--text-color);
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+
+  div {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .footerLogo {
+      filter: brightness(0) invert(1);
+    }
+
+    div {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-block: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+
+      margin-bottom: 20px;
+    }
+
+    * {
+      margin: 0;
+    }
+  }
+
+
 
   a {
     display: flex;
@@ -338,18 +388,18 @@
   margin-bottom: 10px;
 }
 
-.textInput{
+.textInput {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
-.inputGroup{
+.inputGroup {
   display: flex;
   flex-direction: row;
 }
 
-.input{
+.input {
   background: none;
   border-width: 1px;
   border-color: #ffffff;
@@ -359,10 +409,10 @@
   margin-left: 5px;
   padding-left: 10px;
   color: #ffffff;
-  height:40px;
+  height: 40px;
 }
 
-.input2{
+.input2 {
   background: none;
   border-width: 1px;
   border-color: #ffffff;
@@ -372,7 +422,7 @@
   margin-left: 5px;
   padding-left: 10px;
   color: #ffffff;
-  height:40px;
+  height: 40px;
 
 }
 
