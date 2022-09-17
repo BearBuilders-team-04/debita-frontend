@@ -1,44 +1,71 @@
 import type { NextPage } from "next";
 import React from "react";
-import { Table } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.scss";
 
+const ObjectRow = ({ data }) => {
+  const { colateral, borrow, ratio, term_rate, apr, total_term, installments } = data
+  return (
+    <tr>
+      <td>{colateral}</td>
+      <td>{borrow}</td>
+      <td>{ratio}</td>
+      <td>{term_rate}</td>
+      <td>{apr}</td>
+      <td>{total_term}</td>
+      <td>{installments}</td>
+      <td><button className={styles.borrowButton}>Borrow</button></td>
+    </tr>
+  )
+}
+
 const Borrow: NextPage = () => {
+  const data = [
+    {
+      colateral: 1,
+      borrow: "Dai",
+      ratio: "DAI",
+      term_rate: "5.00%",
+      apr: "1000",
+      total_term: "1000",
+      installments: "Active",
+    },
+    {
+      colateral: 1,
+      borrow: "Dai",
+      ratio: "DAI",
+      term_rate: "5.00%",
+      apr: "1000",
+      total_term: "1000",
+      installments: "Active",
+    },
+  ]
+
   return (
     <div className={styles.container}>
       <Header />
 
       <div className={`${styles.main} ${styles.paddingTop}`}>
 
-        <Table striped size="sm" variant="dark"
+        <table
           className={styles.borrowTable}>
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>Colateral</th>
+              <th>Borrow</th>
+              <th>Ratio</th>
+              <th>Term Rate</th>
+              <th>APR</th>
+              <th>Total Term</th>
+              <th>Installments</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
+            {data.map((object, i) => <ObjectRow data={object} key={i} />)}
           </tbody>
-        </Table>
+        </table>
 
       </div>
 

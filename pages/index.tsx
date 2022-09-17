@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Header />
 
-      <div className={styles.main}>
+      <div className={styles.landingMain}>
         <div className={styles.landingHeader}>
           <div>
             <h1 className={styles.landingTitle}>Dēbita.</h1>

@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import { useAccount, useNetwork, useSignMessage } from "wagmi";
 import styles from "../styles/Home.module.scss";
 
 const debitaLogo = require("../assets/images/debita-logo.png");
