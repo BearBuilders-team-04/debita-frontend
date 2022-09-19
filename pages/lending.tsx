@@ -82,24 +82,27 @@ const Lending: NextPage = () => {
   const [isCreating, setIsCreating] = useState(false);
 
   const { config: ercConfig } = usePrepareContractWrite({
-    addressOrName: "0x2C26871B79E69DCfBcA6e713AE058397fE3aD66b",
+    addressOrName: "0xbB14072Ab37b89BFE0977dD49B00fFB448C345e8",
     contractInterface: erc20ABI,
     functionName: "approve",
-    args: ["0x08af2e49c331612cE729a324e1D33Fd320E60DE0", 1000000000000],
+    args: [
+      "0xf1121DF0C05A177De2eEc6247432Df199E87E9A1",
+      "100000000000000000000",
+    ],
     onError: (e) => console.log(e),
   });
 
   const { data, isLoading, isSuccess, write } = useContractWrite({
-    addressOrName: "0x08af2e49c331612cE729a324e1D33Fd320E60DE0",
+    addressOrName: "0xf1121DF0C05A177De2eEc6247432Df199E87E9A1",
     contractInterface: debitaABI,
     functionName: "createLendingOption",
     args: [
       2, // interest
       1000, // timelap,
       6, // paymentCount
-      "1000", // wanted collateral
-      10000000000, // amount borrow
-      "0x2C26871B79E69DCfBcA6e713AE058397fE3aD66b", // address token
+      "1", // wanted collateral
+      "10000000000000000000", // borrow amount
+      "0xbB14072Ab37b89BFE0977dD49B00fFB448C345e8", // address token
     ],
     mode: "recklesslyUnprepared",
     onError: (e) => console.log(e),

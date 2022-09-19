@@ -10,33 +10,33 @@ import "../styles/globals.scss";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
-    // {
-    //   id: 1088,
-    //   /** Human-readable name */
-    //   name: "Metis",
-    //   /** Internal network name */
-    //   network: "Metis",
-    //   /** Currency used by chain */
-    //   nativeCurrency: {
-    //     name: "METIS",
-    //     symbol: "METIS",
-    //     decimals: 18,
-    //   },
-    //   /** Collection of RPC endpoints */
-    //   rpcUrls: {
-    //     default: "https://andromeda.metis.io/?owner=1088",
-    //   },
-    //   /** Collection of block explorers */
-    //   blockExplorers: {
-    //     default: {
-    //       name: "Metis",
-    //       url: "https://andromeda.metis.io/?owner=1088",
-    //     },
-    //   },
-    //   /** Flag for test networks */
-    //   testnet: true,
-    // },`
-    chain.goerli,
+    {
+      id: 588,
+      /** Human-readable name */
+      name: "Metis Stardust Testnet",
+      /** Internal network name */
+      network: "Metis Stardust Testnet",
+      /** Currency used by chain */
+      nativeCurrency: {
+        name: "METIS",
+        symbol: "METIS",
+        decimals: 18,
+      },
+      /** Collection of RPC endpoints */
+      rpcUrls: {
+        default: "https://stardust.metis.io/?owner=588",
+      },
+      /** Collection of block explorers */
+      blockExplorers: {
+        default: {
+          name: "Metis",
+          url: "https://stardust.metis.io/?owner=588",
+        },
+      },
+      /** Flag for test networks */
+      testnet: true,
+    },
+    // chain.goerli,
   ],
   [
     alchemyProvider({
